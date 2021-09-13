@@ -1,0 +1,23 @@
+table {
+    width:100%;
+    background-color:#a6bfcc;
+}
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
+  mat-paginator{
+    background-color:#a6bfcc;
+  }
+
+  a{
+    /* color:#aa8800; */
+    font-weight: bold;
+    text-decoration:unset;
+  }

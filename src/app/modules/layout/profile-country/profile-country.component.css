@@ -1,0 +1,100 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-gap: 30px;
+    grid-auto-rows: minmax(50px, auto);
+    padding-left: 10%;
+    padding-right:10%;
+    padding-top:3%;
+    padding-bottom: 3%;
+  }
+
+  .card-Country {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .country-header{
+    grid-column: 1 / 6;
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .card-total-cases {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    text-align: center;
+  }
+  
+
+  .card-new-cases{ 
+    grid-column: 4 / 6;
+    grid-row: 2;
+    text-align: center;
+
+  }
+
+  .card-total-recovered{
+      
+    grid-column: 1 / 3;
+    grid-row: 3;
+    text-align: center;
+
+  }
+
+  .card-new-recovered{
+    grid-column: 4 / 6;
+    grid-row: 3;
+    text-align: center;
+
+
+   }
+
+   .card-total-deaths{
+    grid-column: 1 / 3;
+    grid-row: 4;
+    text-align: center;
+  
+   }
+
+   .card-new-deaths{
+
+    grid-column: 4 / 6;
+    grid-row: 4;
+    text-align: center;
+   
+
+   }
+
+   .card-total-test{
+
+    grid-column: 1 / 3;
+    grid-row: 5;
+    text-align: center;
+
+   }
+
+   .card-new-test{
+    grid-column: 4 / 6;
+    grid-row: 5;
+    text-align: center;
+   }
+
+   mat-card{
+       background-color:#e6ee9c;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    height:100px;
+    padding-top: 20px;
+   }
+
+   .country-card{
+    height:50px;
+    }
+
+   mat-card-footer{
+       margin-top:40px;
+   }

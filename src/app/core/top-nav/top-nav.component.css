@@ -1,0 +1,32 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+  mat-toolbar{
+    color: white;
+    background-color: #26418f;            
+    width: 100%;
+  }             
+
+
+  .title{
+    color:#cddc39;
+    font-weight: bold;
+  }
+
+  .lime{
+    background-color:#cddc39;
+  }
+
+  @media screen and (max-width: 700px) {
+
+
+    mat-toolbar{
+      color: white;
+      background-color: #26418f;            
+      width: 105%;
+    }             
+  
+
+  }

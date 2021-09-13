@@ -1,0 +1,36 @@
+<div class="container">
+    <!-- charts -->
+    <mat-card class="card-charts">  
+        <div>
+            <mat-spinner  *ngIf="tableLoader2"></mat-spinner>
+            <app-line-chart *ngIf="!tableLoader2" [globalData]="this.charCaseData"></app-line-chart>
+        </div>
+    
+       
+       
+
+
+    </mat-card>
+    <!-- tables -->
+    <mat-card class="card-tabs">
+        <mat-tab-group mat-align-tabs="start">
+       
+            <mat-tab [label]="label1">
+                <app-country-table *ngIf="!tableLoader  && !profileMode" [dataTable]="this.dataTable" >  </app-country-table>
+
+                <app-profile-country  *ngIf="!tableLoader  && profileMode"  [countrySelected]="this.countrySelected" >  </app-profile-country>
+                <mat-spinner  *ngIf="tableLoader"></mat-spinner>
+            </mat-tab>
+    
+            <mat-tab [label]="label2">
+    
+                <app-global-data-table *ngIf="!tableLoader2" [globalData]="this.globalData"  > </app-global-data-table>
+                <mat-spinner  *ngIf="tableLoader2"></mat-spinner>
+    
+
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>
+
+

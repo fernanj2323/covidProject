@@ -1,0 +1,22 @@
+ .container{
+    margin-left:10%; 
+    margin-right: 10%;
+  }
+
+  mat-spinner{
+ 
+    margin-left:40%;
+    margin-top:15%;
+  }
+
+  
+  mat-card{
+    background-color:#8eacbb;
+   
+  }
+
+
+  .card-charts{
+    margin-bottom: 3%;
+    margin-top:5%;
+  }

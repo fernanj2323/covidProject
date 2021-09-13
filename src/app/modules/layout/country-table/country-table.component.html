@@ -1,0 +1,62 @@
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+ 
+    <ng-container matColumnDef="Country">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Country </th>
+      <td mat-cell *matCellDef="let element" > <a title="Country profile" routerLink="countryprofile/{{element.country}}">{{element.country}}</a>  </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="Total Cases">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Cases </th>
+      <td mat-cell *matCellDef="let element"> {{element.totalCases}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="New Cases">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> New Cases </th>
+      <td mat-cell *matCellDef="let element"> {{element.newCases}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="Total Recovered">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Recovered </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalRecovered}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="New Recovered">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> New Recovered </th>
+        <td mat-cell *matCellDef="let element"> {{element.newRecovered}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="total Deaths">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> total Deaths </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalDeaths}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="new Deaths">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> new Deaths </th>
+        <td mat-cell *matCellDef="let element"> {{element.newDeaths}} </td>
+      </ng-container>
+      
+
+      <ng-container matColumnDef="total Test">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> total Test </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalTest}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="new Test">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> new Test </th>
+        <td mat-cell *matCellDef="let element"> {{element.newTest}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[ 5, 10, 25]" aria-label="Select page of dataSource"></mat-paginator>
+  
+  
