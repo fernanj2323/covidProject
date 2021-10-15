@@ -16,7 +16,6 @@ export class TopNavComponent implements OnInit {
   }
 
 
-
   redirect(){
 
     const url = '/'

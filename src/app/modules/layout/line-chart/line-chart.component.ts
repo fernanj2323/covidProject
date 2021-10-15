@@ -40,7 +40,7 @@ export class LineChartComponent implements OnInit {
       this.makeChart3()
   }
   
-  // recoveres per day 
+  // recoveres per day chart 
   makeChart3(){
     var dataLabels = []
     var data = []
@@ -79,15 +79,12 @@ export class LineChartComponent implements OnInit {
    },
    options: {
      responsive: false,
-     // display:true
+   
      scales: {
        yAxes: [{
            display: true,
            ticks: {
-              //  suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
-               // OR //
-              //  suggestedMax: 100,
-               // beginAtZero: true   // minimum value will be 0.
+    
            }
        }]
    }
@@ -97,7 +94,7 @@ export class LineChartComponent implements OnInit {
  
   }
 
-  // deaths per Day
+  // deaths per Day chart 
   makeChart2(){
     var dataLabels = []
     var data = []
@@ -136,15 +133,12 @@ export class LineChartComponent implements OnInit {
    },
    options: {
      responsive: false,
-     // display:true
+
      scales: {
        yAxes: [{
            display: true,
            ticks: {
-              //  suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
-               // OR //
-              //  suggestedMax: 100,
-               // beginAtZero: true   // minimum value will be 0.
+       
            }
        }]
    }
@@ -154,7 +148,7 @@ export class LineChartComponent implements OnInit {
  
   }
 
-  // New Case per Day
+  // New Case per Day chart 
   makeChart1(){
     var dataLabels = []
     var data = []
@@ -194,15 +188,12 @@ export class LineChartComponent implements OnInit {
    },
    options: {
      responsive: false,
-     // display:true
+   
      scales: {
        yAxes: [{
            display: true,
            ticks: {
-              //  suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
-               // OR //
-              //  suggestedMax: 100,
-               // beginAtZero: true   // minimum value will be 0.
+      
            }
        }]
    }

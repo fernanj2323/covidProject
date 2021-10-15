@@ -6,7 +6,7 @@ import { Component, OnInit,  Output,Input,  EventEmitter,ViewChild, AfterViewIni
 })
 export class ProfileCountryComponent implements OnInit {
 
-
+  // input from layout component 
   @Input() countrySelected:any; 
 
 

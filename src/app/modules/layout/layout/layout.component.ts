@@ -32,12 +32,16 @@ export class LayoutComponent implements OnInit {
     public route: ActivatedRoute,
   ) {
 
+    //***********
+    //capturing the country as a parameter
     const params = this.route.snapshot.params["country"]; 
     if (params){
+      //if the country exists then we are in country data
       this.profileMode = true 
        this.label1 = 'Data' 
        this.label2 = 'Country data per day' 
-    }else{ 
+    }else{
+      //if it does not exist we are in global data
       this.profileMode = false 
       this.label1 = 'List by Country' 
       this.label2 = 'Global data per day' 
@@ -45,7 +49,6 @@ export class LayoutComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    // this.getCountries()
     if (!this.profileMode){
       this.getSpecificCountrires()
       this.getHistoricalData()
@@ -178,6 +181,7 @@ export class LayoutComponent implements OnInit {
   }
 
   getHistoricalData(){
+    //  obtain the history and segment in cases, deaths and recovered
     this.DiseaseServiceService.getHistorical().subscribe
     (res=>{
   
@@ -226,23 +230,24 @@ export class LayoutComponent implements OnInit {
           cases:caseOfTheDay,     
           recoveres: recoveresOfTheDay,
           deaths: deathsOfTheDay, 
-          // position: i
         })
 
         if (i  == casesArr2.length - 1){
     
+
+          // order arrays 
           const deathsSort = fullArray.sort(function(a,b){return b.deaths - a.deaths;});
           const casesSort = fullArray.sort(function(a,b){return b.cases - a.cases;});
           const recoversSort = fullArray.sort(function(a,b){return b.recoveres - a.recoveres;});
 
 
-
+          // looking first
           const firstDeath = deathsSort[0]
           const firtsCase = casesSort[0]
           const firstRecover = recoversSort[0]
           
 
-          
+          // colors apply 
           if (firstRecover.color){
             if (firstRecover.color == 'red' ){
             }else if (firstRecover.color == 'yellow'){
@@ -272,6 +277,8 @@ export class LayoutComponent implements OnInit {
           columns: ['date', 'cases', 'recoveres', 'deaths']
         })
 
+
+         // setting each table 
         this.charCaseData = ({
           data: fullArray,
           config: 1 
@@ -297,6 +304,7 @@ export class LayoutComponent implements OnInit {
   }
 
   getSpecificCountry(){
+    //getting data by country 
     const params = this.route.snapshot.params["country"]; 
     this.DiseaseServiceService.getDataByCountry(params).subscribe
     (res=>{
@@ -319,10 +327,11 @@ export class LayoutComponent implements OnInit {
     this.tableLoader = false 
     })
   }
+
+
+
   getSpecificCountrires(){
-  //usa 
-  //colombia
-  //canada
+    //getting data by each country 
     this.DiseaseServiceService.getDataByCountry('usa').subscribe
     (res=>{
       var usa = res as any
@@ -338,6 +347,7 @@ export class LayoutComponent implements OnInit {
           newTest:usa.oneTestPerPeople,
           flag:usa.countryInfo.flag
       })
+
       this.DiseaseServiceService.getDataByCountry('colombia').subscribe
       (res=>{
         var colombia = res as any
@@ -353,6 +363,7 @@ export class LayoutComponent implements OnInit {
             newTest:colombia.oneTestPerPeople,
             flag:colombia.countryInfo.flag
         })
+
         this.DiseaseServiceService.getDataByCountry('canada').subscribe
         (res=>{
         
@@ -370,39 +381,30 @@ export class LayoutComponent implements OnInit {
               flag:canada.countryInfo.flag
           })
     
-          
-
           const data = []
+
+          // make a single array with the 3 countries
            data.push(this.usa, this.colombia, this.canada)
 
+           
           this.dataTable = ({
             data: data,
             columns: ['Country', 'Total Cases', 'New Cases', 'Total Recovered', 'New Recovered', 'total Deaths', 'new Deaths', 'total Test','new Test' ]
           })
-
-
-
-       
-
           this.tableLoader = false 
         },err=>{
           console.log(err)
         })
-  
       } ,err=>{
         console.log(err)
       })
-
-
-
-     
-
     } ,err=>{
       console.log(err)
     })
   }
 
   getCountries(){
+    // get all countries 
     this.DiseaseServiceService.getCountries().subscribe
     (res=>{
     

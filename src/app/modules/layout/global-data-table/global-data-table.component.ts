@@ -8,7 +8,9 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./global-data-table.component.css']
 })
 export class GlobalDataTableComponent implements OnInit, AfterViewInit {
+    //input from layout
   @Input() globalData:any; 
+    //angular material table dependencies 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   displayedColumns: string[] 
@@ -26,6 +28,7 @@ export class GlobalDataTableComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
+        // setting pagination and sort for country table 
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
